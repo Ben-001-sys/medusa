@@ -8,9 +8,9 @@ import {
 loadEnv(process.env.NODE_ENV || "development", process.cwd());
 
 module.exports = defineConfig({
-  //   admin: {
-  //   disable: true,
-  // },
+    admin: {
+    disable: true,
+  },
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     http: {
