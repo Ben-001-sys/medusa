@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext } from "react"
 
-interface ModalContext {
+interface ModalContext { 
   close: () => void
 }
 
