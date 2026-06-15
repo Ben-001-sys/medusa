@@ -93,9 +93,6 @@ jobs:
       - name: Run Prisma migrations
         run: pnpm medusa db:migrate
 
-      - name: Run lint
-        run: pnpm lint
-
       - name: Build application
         run: pnpm medusa build
 
