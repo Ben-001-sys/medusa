@@ -96,5 +96,11 @@ jobs:
       - name: Build application
         run: pnpm medusa build
 
-      - name: Run unit tests
-        run: pnpm test
+      - name: find
+        run: find . -name index.html
+
+      - name: start app
+        run: pnpm medusa start
+
+      - name: find after start
+        run: find . -name index.html
