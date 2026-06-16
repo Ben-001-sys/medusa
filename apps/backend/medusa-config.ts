@@ -15,7 +15,7 @@ module.exports = defineConfig({
   projectConfig: {
     workerMode: process.env.MEDUSA_WORKER_MODE as "shared" | "worker" | "server",
     databaseUrl: process.env.DATABASE_URL,
-    redisUrl: process.env.REDIS_URL,
+    // redisUrl: process.env.REDIS_URL,
     http: {
       storeCors: process.env.STORE_CORS!,
       adminCors: process.env.ADMIN_CORS!,
@@ -37,5 +37,23 @@ module.exports = defineConfig({
     {
       resolve: "./src/modules/manager",
     },
+    // {
+    //   resolve: "@medusajs/medusa/caching",
+    //   options: {
+    //     providers: [
+    //       {
+    //         resolve: "@medusajs/caching-redis",
+    //         id: "caching-redis",
+    //         // Optional, makes this the default caching provider
+    //         is_default: true,
+    //         options: {
+    //           redisUrl: process.env.CACHE_REDIS_URL,
+    //           // more options...
+    //         },
+    //       },
+    //       // other caching providers...
+    //     ],
+    //   },
+    // },
   ],
 });
