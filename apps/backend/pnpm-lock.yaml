@@ -17,9 +17,15 @@ importers:
       '@medusajs/admin-shared':
         specifier: 2.15.5
         version: 2.15.5
+      '@medusajs/analytics-posthog':
+        specifier: ^2.15.5
+        version: 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))(posthog-node@5.37.0(rxjs@7.8.2))
       '@medusajs/caching':
         specifier: 2.15.5
         version: 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))(awilix@8.0.1)
+      '@medusajs/caching-redis':
+        specifier: ^2.15.5
+        version: 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))
       '@medusajs/cli':
         specifier: 2.15.5
         version: 2.15.5(@types/node@20.19.43)(supports-color@8.1.1)
@@ -7235,17 +7241,17 @@ snapshots:
     dependencies:
       '@medusajs/framework': 2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0)
 
-  '@medusajs/cache-redis@2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))(supports-color@8.1.1)':
+  '@medusajs/cache-redis@2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))':
     dependencies:
       '@medusajs/framework': 2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0)
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
     transitivePeerDependencies:
       - supports-color
 
   '@medusajs/caching-redis@2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))':
     dependencies:
       '@medusajs/framework': 2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0)
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
       xxhash-wasm: 1.1.0
     transitivePeerDependencies:
       - supports-color
@@ -7430,7 +7436,7 @@ snapshots:
     dependencies:
       '@medusajs/framework': 2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0)
       bullmq: 5.13.0
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
     transitivePeerDependencies:
       - supports-color
 
@@ -7479,7 +7485,7 @@ snapshots:
       tsconfig-paths: 4.2.0
       zod-validation-error: 5.0.0(zod@4.2.0)
     optionalDependencies:
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
       vite: 5.4.21(@types/node@20.19.43)
     transitivePeerDependencies:
       - '@types/node'
@@ -7532,7 +7538,7 @@ snapshots:
   '@medusajs/locking-redis@2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))':
     dependencies:
       '@medusajs/framework': 2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0)
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
     transitivePeerDependencies:
       - supports-color
 
@@ -7555,7 +7561,7 @@ snapshots:
       '@medusajs/auth-github': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))
       '@medusajs/auth-google': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))
       '@medusajs/cache-inmemory': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))
-      '@medusajs/cache-redis': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))(supports-color@8.1.1)
+      '@medusajs/cache-redis': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))
       '@medusajs/caching': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))(awilix@8.0.1)
       '@medusajs/caching-redis': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))
       '@medusajs/cart': 2.15.5(@medusajs/framework@2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0))
@@ -7793,7 +7799,7 @@ snapshots:
     dependencies:
       bignumber.js: 9.3.1
     optionalDependencies:
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
       vite: 5.4.21(@types/node@20.19.43)
 
   '@medusajs/ui@4.1.15(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)':
@@ -7869,7 +7875,7 @@ snapshots:
     dependencies:
       '@medusajs/framework': 2.15.5(@medusajs/cli@2.15.5(@types/node@20.19.43)(supports-color@8.1.1))(@types/node@20.19.43)(ioredis@5.11.1)(vite@5.4.21(@types/node@20.19.43))(zod@4.2.0)
       bullmq: 5.13.0
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
       ulid: 2.4.0
     transitivePeerDependencies:
       - supports-color
@@ -10039,7 +10045,7 @@ snapshots:
   bullmq@5.13.0:
     dependencies:
       cron-parser: 4.9.0
-      ioredis: 5.11.1(supports-color@8.1.1)
+      ioredis: 5.11.1
       msgpackr: 1.12.1
       node-abort-controller: 3.1.1
       semver: 7.8.4
@@ -10977,7 +10983,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  ioredis@5.11.1(supports-color@8.1.1):
+  ioredis@5.11.1:
     dependencies:
       '@ioredis/commands': 1.10.0
       cluster-key-slot: 1.1.1

@@ -15,7 +15,7 @@ module.exports = defineConfig({
   projectConfig: {
     workerMode: process.env.MEDUSA_WORKER_MODE as "shared" | "worker" | "server",
     databaseUrl: process.env.DATABASE_URL,
-    // redisUrl: process.env.REDIS_URL,
+    redisUrl: process.env.REDIS_URL,
     http: {
       storeCors: process.env.STORE_CORS!,
       adminCors: process.env.ADMIN_CORS!,
@@ -37,38 +37,38 @@ module.exports = defineConfig({
     {
       resolve: "./src/modules/manager",
     },
-    {
-      resolve: "@medusajs/medusa/analytics",
-      options: {
-        providers: [
-          {
-            resolve: "@medusajs/analytics-posthog",
-            id: "posthog",
-            options: {
-              posthogEventsKey: process.env.POSTHOG_EVENTS_API_KEY,
-              posthogHost: process.env.POSTHOG_HOST,
-            },
-          },
-        ],
-      },
-    },
     // {
-    //   resolve: "@medusajs/medusa/caching",
+    //   resolve: "@medusajs/medusa/analytics",
     //   options: {
     //     providers: [
     //       {
-    //         resolve: "@medusajs/caching-redis",
-    //         id: "caching-redis",
-    //         // Optional, makes this the default caching provider
-    //         is_default: true,
+    //         resolve: "@medusajs/analytics-posthog",
+    //         id: "posthog",
     //         options: {
-    //           redisUrl: process.env.CACHE_REDIS_URL,
-    //           // more options...
+    //           posthogEventsKey: process.env.POSTHOG_EVENTS_API_KEY,
+    //           posthogHost: process.env.POSTHOG_HOST,
     //         },
     //       },
-    //       // other caching providers...
     //     ],
     //   },
     // },
+    {
+      resolve: "@medusajs/medusa/caching",
+      options: {
+        providers: [
+          {
+            resolve: "@medusajs/caching-redis",
+            id: "caching-redis",
+            // Optional, makes this the default caching provider
+            is_default: true,
+            options: {
+              redisUrl: process.env.CACHE_REDIS_URL,
+              // more options...
+            },
+          },
+          // other caching providers...
+        ],
+      },
+    },
   ],
 });
