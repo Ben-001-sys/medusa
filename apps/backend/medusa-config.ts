@@ -37,21 +37,21 @@ module.exports = defineConfig({
     {
       resolve: "./src/modules/manager",
     },
-    // {
-    //   resolve: "@medusajs/medusa/analytics",
-    //   options: {
-    //     providers: [
-    //       {
-    //         resolve: "@medusajs/analytics-posthog",
-    //         id: "posthog",
-    //         options: {
-    //           posthogEventsKey: process.env.POSTHOG_EVENTS_API_KEY,
-    //           posthogHost: process.env.POSTHOG_HOST,
-    //         },
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: "@medusajs/medusa/analytics",
+      options: {
+        providers: [
+          {
+            resolve: "@medusajs/analytics-posthog",
+            id: "posthog",
+            options: {
+              posthogEventsKey: process.env.POSTHOG_EVENTS_API_KEY,
+              posthogHost: process.env.POSTHOG_HOST,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: "@medusajs/medusa/caching",
       options: {
