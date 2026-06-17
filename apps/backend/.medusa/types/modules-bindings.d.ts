@@ -1,3 +1,4 @@
+import type Wishlist from 'medusa-plugin-wishlist/.medusa/server/src/modules/wishlist'
 import type { IStockLocationService } from '@medusajs/framework/types'
 import type { IInventoryService } from '@medusajs/framework/types'
 import type { IProductModuleService } from '@medusajs/framework/types'
@@ -25,9 +26,12 @@ import type { ILockingModule } from '@medusajs/framework/types'
 import type { IFileModuleService } from '@medusajs/framework/types'
 import type Blog from '../../src/modules/blog'
 import type Manager from '../../src/modules/manager'
+import type Analytics from '@medusajs/medusa/analytics'
+import type { ICachingModuleService } from '@medusajs/framework/types'
 
 declare module '@medusajs/framework/types' {
   interface ModuleImplementations {
+    'wishlist': InstanceType<(typeof Wishlist)['service']>,
     'stock_location': IStockLocationService,
     'inventory': IInventoryService,
     'product': IProductModuleService,
@@ -54,6 +58,8 @@ declare module '@medusajs/framework/types' {
     'locking': ILockingModule,
     'file': IFileModuleService,
     'blog': InstanceType<(typeof Blog)['service']>,
-    'manager': InstanceType<(typeof Manager)['service']>
+    'manager': InstanceType<(typeof Manager)['service']>,
+    'analytics': InstanceType<(typeof Analytics)['service']>,
+    'caching': ICachingModuleService
   }
 }
