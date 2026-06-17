@@ -52,24 +52,24 @@ module.exports = defineConfig({
         ],
       },
     },
-    {
-      resolve: "@medusajs/medusa/caching",
-      options: {
-        providers: [
-          {
-            resolve: "@medusajs/caching-redis",
-            id: "caching-redis",
-            // Optional, makes this the default caching provider
-            is_default: true,
-            options: {
-              redisUrl: process.env.CACHE_REDIS_URL,
-              // more options...
-            },
-          },
-          // other caching providers...
-        ],
-      },
-    },
+    // {
+    //   resolve: "@medusajs/medusa/caching",
+    //   options: {
+    //     providers: [
+    //       {
+    //         resolve: "@medusajs/caching-redis",
+    //         id: "caching-redis",
+    //         // Optional, makes this the default caching provider
+    //         is_default: true,
+    //         options: {
+    //           redisUrl: process.env.CACHE_REDIS_URL,
+    //           // more options...
+    //         },
+    //       },
+    //       // other caching providers...
+    //     ],
+    //   },
+    // },
     {
       resolve: "@medusajs/medusa/file",
       options: {

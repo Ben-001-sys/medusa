@@ -90,9 +90,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run Prisma migrations
-        run: pnpm medusa db:migrate
-
       - name: Build application
         run: pnpm medusa build
 
