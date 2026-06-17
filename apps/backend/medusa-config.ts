@@ -106,50 +106,50 @@ module.exports = defineConfig({
         ],
       },
     },
-    {
-      resolve: "@medusajs/medusa/event-bus-redis",
-      options: { 
-        redisUrl: process.env.EVENTS_REDIS_URL,
-        // suggested additional options for production use
-        jobOptions: {
-          removeOnComplete: {
-            // keep jobs for 1 hour or up to 1000 jobs
-            age: 3600,
-            count: 1000,
-          },
-          removeOnFail: {
-            // keep jobs for 1 hour or up to 1000 jobs
-            age: 3600,
-            count: 1000,
-          },
-        },
-      },
-    },
-    {
-      resolve: "@medusajs/medusa/workflow-engine-redis",
-      options: {
-        redis: {
-          redisUrl: process.env.WE_REDIS_URL,
-          // ...other Redis options
-        },
-      },
-    },
-   {
-      resolve: "@medusajs/medusa/locking",
-      options: {
-        providers: [
-          {
-            resolve: "@medusajs/medusa/locking-redis",
-            id: "locking-redis",
-            // set this if you want this provider to be used by default
-            // and you have other Locking Module Providers registered.
-            is_default: true,
-            options: {
-              redisUrl: process.env.LOCKING_REDIS_URL,
-            },
-          },
-        ],
-      },
-    },
+  //   {
+  //     resolve: "@medusajs/medusa/event-bus-redis",
+  //     options: { 
+  //       redisUrl: process.env.EVENTS_REDIS_URL,
+  //       // suggested additional options for production use
+  //       jobOptions: {
+  //         removeOnComplete: {
+  //           // keep jobs for 1 hour or up to 1000 jobs
+  //           age: 3600,
+  //           count: 1000,
+  //         },
+  //         removeOnFail: {
+  //           // keep jobs for 1 hour or up to 1000 jobs
+  //           age: 3600,
+  //           count: 1000,
+  //         },
+  //       },
+  //     },
+  //   },
+  //   {
+  //     resolve: "@medusajs/medusa/workflow-engine-redis",
+  //     options: {
+  //       redis: {
+  //         redisUrl: process.env.WE_REDIS_URL,
+  //         // ...other Redis options
+  //       },
+  //     },
+  //   },
+  //  {
+  //     resolve: "@medusajs/medusa/locking",
+  //     options: {
+  //       providers: [
+  //         {
+  //           resolve: "@medusajs/medusa/locking-redis",
+  //           id: "locking-redis",
+  //           // set this if you want this provider to be used by default
+  //           // and you have other Locking Module Providers registered.
+  //           is_default: true,
+  //           options: {
+  //             redisUrl: process.env.LOCKING_REDIS_URL,
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   },
   ],
 });

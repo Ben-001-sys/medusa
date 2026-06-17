@@ -1,5 +1,6 @@
 packages:
   - "apps/storefront"
+  - "apps/storefront copy"
   - "!apps/backend/.medusa/**"
 allowBuilds:
   '@medusajs/telemetry': true
