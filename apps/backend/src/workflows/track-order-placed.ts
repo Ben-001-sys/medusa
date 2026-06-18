@@ -11,6 +11,7 @@ type StepInput = {
 const trackOrderPlacedStep = createStep(
   "track-order-placed-step",
   async ({ order }: StepInput, { container }) => {
+    console.log("TRACKING ORDER", order.id)
     const analyticsModuleService = container.resolve(Modules.ANALYTICS)
 
     await analyticsModuleService.track({
